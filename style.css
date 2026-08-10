@@ -96,35 +96,56 @@ a {
 main {
   flex: 1;
   display: flex;
-  align-items: center;
+  justify-content: center;
 }
 
 .hero {
-  width: min(92%, var(--max-width));
-  margin: auto;
-  padding: 66px 0;
-  display: grid;
-  grid-template-columns: 1fr 0.6fr;
-  gap: 52px;
+  width: min(90%, 640px);
+  margin: 0 auto;
+  padding: 72px 0 84px;
+  display: flex;
+  flex-direction: column;
   align-items: center;
+  text-align: center;
+}
+
+.hero-portrait {
+  margin-bottom: 30px;
+}
+
+.hero-portrait img {
+  width: 136px;
+  height: 136px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 0.5px solid var(--border-soft);
+  display: block;
 }
 
 .eyebrow {
   font-size: 11px;
   font-weight: 500;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
   color: var(--navy);
-  margin-bottom: 22px;
+  margin-bottom: 16px;
 }
 
 .hero h1 {
   font-family: "EB Garamond", Georgia, serif;
-  font-size: clamp(46px, 6vw, 58px);
+  font-size: clamp(44px, 6vw, 54px);
   font-weight: 500;
-  line-height: 0.96;
+  line-height: 0.98;
   letter-spacing: -0.03em;
   color: var(--text);
+  margin-bottom: 20px;
+}
+
+.intro {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text-soft);
+  max-width: 440px;
   margin-bottom: 30px;
 }
 
@@ -132,32 +153,20 @@ main {
   display: flex;
   flex-wrap: wrap;
   gap: 9px;
-  max-width: 440px;
+  justify-content: center;
+  max-width: 540px;
 }
 
 .focus-chips span {
-  font-size: 12.5px;
+  font-size: 11px;
   font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
   color: var(--navy-text);
   background: var(--chip-bg);
   border: 0.5px solid var(--chip-border);
   border-radius: 8px;
-  padding: 8px 15px;
-  font-feature-settings: "lnum" 1;
-}
-
-.hero-portrait {
-  display: flex;
-  justify-content: center;
-}
-
-.hero-portrait img {
-  width: 230px;
-  height: 288px;
-  object-fit: cover;
-  border-radius: 14px;
-  border: 0.5px solid var(--border-soft);
-  display: block;
+  padding: 8px 14px;
 }
 
 
@@ -206,25 +215,12 @@ main {
   }
 
   .hero {
-    grid-template-columns: 1fr;
-    gap: 36px;
-    padding: 48px 0;
-    text-align: left;
-  }
-
-  /* portrait BELOW the name on mobile */
-  .hero-text {
-    order: 1;
-  }
-
-  .hero-portrait {
-    order: 2;
-    justify-content: flex-start;
+    padding: 52px 0 64px;
   }
 
   .hero-portrait img {
-    width: 190px;
-    height: 238px;
+    width: 120px;
+    height: 120px;
   }
 
   .site-footer {
