@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" href="favicon-32.png" sizes="32x32">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+  <title>Theory — Adhiraj Kapuria</title>
+
+  <meta
+    name="description"
+    content="Theoretical work on graphene — Dirac fermions and the quantum Hall effect, flat bands and Chern states in rhombohedral multilayers, and proximity spin–orbit coupling and superconductivity in graphene/WSe2."
+  >
+  <meta name="author" content="Adhiraj Kapuria">
+  <link rel="canonical" href="https://adhirajkapuria.com/theory.html">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500;600&family=Inter:wght@400;500&family=Source+Serif+4:wght@600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="./style.css">
+
+  <!-- MathJax for equation rendering -->
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] },
+      svg: { fontCache: 'global' }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script" async></script>
+</head>
+
+<body>
+
+  <header class="site-header">
+    <nav class="nav-container">
+
+      <a href="index.html" class="brand">AK</a>
+
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <div class="nav-dropdown">
+          <a href="research.html" class="is-current">Research</a>
+          <div class="dropdown-menu">
+            <a href="theory.html" class="is-current">Theory</a>
+            <a href="fabrication.html">Nano-fabrication</a>
+            <a href="computation.html">Computation</a>
+          </div>
+        </div>
+        <a href="projects.html">Projects</a>
+        <a href="Adhiraj_CV.pdf">CV</a>
+      </div>
+
+    </nav>
+  </header>
+
+  <main>
+
+    <article class="page">
+
+      <p class="eyebrow"><a href="research.html" class="crumb">Research</a> / Theory</p>
+      <h1 class="page-title">Graphene, band topology, and proximity effects</h1>
+
+      <div class="prose">
+        <p>
+          My theoretical interest is in how the Dirac physics of graphene is
+          modified by stacking, symmetry, and interfaces, giving rise to
+          unconventional quantum Hall states, topological flat bands, and
+          proximity-induced superconductivity.
+        </p>
+
+        <h2 class="prose-h">Dirac fermions and the quantum Hall effect</h2>
+        <p>
+          Low-energy electrons in monolayer graphene behave as massless Dirac
+          fermions, described near the K and K′ valleys by
+        </p>
+        <p class="equation">
+          $$H = \hbar v_F\,(\xi\,\sigma_x k_x + \sigma_y k_y),$$
+        </p>
+        <p>
+          with linear dispersion $E = \pm\hbar v_F|k|$ and a Berry phase of
+          $\pi$. This Berry phase has a direct experimental consequence. In a
+          magnetic field, the Landau spectrum contains a level fixed at zero
+          energy, and the Hall conductivity is quantized at half-integer
+          values, $\sigma_{xy} = \pm 4\,(N+\tfrac{1}{2})\,e^2/h$. Bilayer
+          graphene, whose low-energy electrons are massive chiral fermions with
+          Berry phase $2\pi$, instead shows a double-height step in
+          $\sigma_{xy}$ across zero density. The quantum Hall response therefore
+          reflects the chirality and topology of the underlying bands.
+        </p>
+
+        <h2 class="prose-h">Rhombohedral multilayers, flat bands, and Chern states</h2>
+        <p>
+          Stacking order sets the low-energy dispersion. In rhombohedral (ABC)
+          $N$-layer graphene, the two-band model gives a chiral dispersion
+          $E \sim k^N$ that flattens with layer number. These flat bands
+          enhance interaction effects, favoring correlated and topological
+          states: with a displacement field or interaction-driven symmetry
+          breaking, the gapped bands can carry nonzero Chern number. In
+          rhombohedral pentalayer graphene, this produces correlated and
+          Chern-insulating states, with observed Chern numbers $C = -5$ and
+          $C = -3$.
+        </p>
+        <p>
+          The origin of the $C = -3$ state, and the transition from $C = -3$ to
+          $C = -5$, can be explained by an asynchronous mass inversion
+          mechanism — the subject of a companion presentation I prepared.
+          Trigonal warping splits the low-energy bands near each valley into a
+          central touching point and three satellite Dirac cones, and the
+          combination of staggered layer order and displacement field gives
+          them different, momentum-dependent masses. As the displacement field
+          increases, the satellite cones invert first — changing the Chern
+          number by $\pm 3$ to give $C = -3$ — and the central point inverts at
+          a higher field, completing the transition to $C = -5$. Without
+          trigonal warping the system would pass directly from $C = 0$ to
+          $C = -5$, so the satellite cones are what generate the intermediate
+          state.
+        </p>
+
+        <h2 class="prose-h">Proximity coupling to WSe₂</h2>
+        <p>
+          Graphene's intrinsic spin–orbit coupling is negligible, but coupling
+          it to a transition-metal dichalcogenide such as WSe₂ induces a
+          stronger effective coupling by proximity, dominated by an Ising
+          (valley–Zeeman) term that locks spin to valley. This has measurable
+          consequences for superconductivity: in bilayer graphene proximitized
+          by WSe₂, superconductivity appears at zero magnetic field, with a
+          critical temperature roughly an order of magnitude higher and over a
+          wider density range than in bilayer graphene alone. Superconductivity
+          emerges only for displacement fields that push the electronic
+          wavefunctions toward the WSe₂, indicating that the induced Ising
+          spin–orbit coupling stabilizes the pairing, consistent with the
+          observed violation of the Pauli limit under in-plane fields. This is
+          the regime my fabrication and first-principles work target: building
+          graphene/WSe₂ interfaces and quantifying the induced spin–orbit
+          parameters.
+        </p>
+      </div>
+
+      <section class="references">
+        <h2 class="ref-heading">References</h2>
+        <ol class="ref-list">
+          <li>E. McCann and M. Koshino, “The electronic properties of bilayer graphene,” <em>Rep. Prog. Phys.</em> <strong>76</strong>, 056503 (2013).</li>
+          <li>T. Han et al., “Correlated insulator and Chern insulators in pentalayer rhombohedral-stacked graphene,” <em>Nat. Nanotechnol.</em> <strong>19</strong>, 181 (2024).</li>
+          <li>X. Feng, Z.-T. Sun, and K. T. Law, “Quantum anomalous Hall states enriched by asynchronous mass inversion in multilayer graphene,” <em>Commun. Phys.</em> <strong>9</strong>, 265 (2026).</li>
+          <li>Y. Zhang et al., “Enhanced superconductivity in spin–orbit proximitized bilayer graphene,” <em>Nature</em> <strong>613</strong>, 268 (2023).</li>
+        </ol>
+      </section>
+
+    </article>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2026 Adhiraj Kapuria</p>
+    <div class="footer-links">
+      <a
+        href="https://www.linkedin.com/in/adhirajkapuria/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >LinkedIn</a>
+      <a href="mailto:adhiraj.kapuria@duke.edu">adhiraj.kapuria@duke.edu</a>
+    </div>
+  </footer>
+
+</body>
+
+</html>
