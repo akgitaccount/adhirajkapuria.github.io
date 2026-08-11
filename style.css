@@ -243,6 +243,66 @@ main {
 }
 
 
+/* ---------- INTERIOR PAGE (About, etc.) ---------- */
+
+.page {
+  width: min(90%, 680px);
+  margin: 0 auto;
+  padding: 76px 0 64px;
+}
+
+.page .eyebrow {
+  margin-bottom: 14px;
+}
+
+.page-title {
+  font-family: "EB Garamond", Georgia, serif;
+  font-size: clamp(38px, 5vw, 52px);
+  font-weight: 500;
+  line-height: 1.02;
+  letter-spacing: -0.03em;
+  color: var(--text);
+  margin-bottom: 44px;
+}
+
+.prose p {
+  font-size: 17px;
+  line-height: 1.75;
+  color: var(--text-soft);
+  margin-bottom: 24px;
+}
+
+.prose p:last-child {
+  margin-bottom: 0;
+}
+
+.page-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 28px;
+  margin-top: 52px;
+  padding-top: 34px;
+  border-top: 0.5px solid var(--border);
+}
+
+.page-links a {
+  font-family: "EB Garamond", Georgia, serif;
+  font-size: 21px;
+  color: var(--text);
+  transition: color 0.2s ease;
+}
+
+.page-links a .arrow {
+  color: var(--accent);
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+
+.page-links a:hover .arrow {
+  transform: translateX(4px);
+}
+
+
 /* ---------- TABLET ---------- */
 
 @media (max-width: 820px) {
