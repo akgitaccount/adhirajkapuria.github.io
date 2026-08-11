@@ -3,18 +3,18 @@
    ========================================================= */
 
 :root {
-  --bg: #0f1626;
-  --surface: #172236;
-  --text: #f4f6fb;
-  --text-soft: #9aa2b4;
-  --muted: #8892a6;
-  --faint: #6f7890;
+  --bg: #0b0d12;
+  --surface: #13161d;
+  --text: #f2f1ec;
+  --text-soft: #969aa4;
+  --muted: #7d8290;
+  --faint: #686d78;
 
-  --accent: #7fa8e6;
+  --accent: #8fa3c4;
 
-  --border: #1c2740;
-  --border-soft: #26324a;
-  --chip-border: #263450;
+  --border: #191c22;
+  --border-soft: #242832;
+  --chip-border: #232833;
 
   --max-width: 1180px;
 }
@@ -56,7 +56,7 @@ a {
 .nav-container {
   width: min(92%, var(--max-width));
   margin: auto;
-  height: 76px;
+  height: 90px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -64,7 +64,7 @@ a {
 
 .brand {
   font-family: "EB Garamond", Georgia, serif;
-  font-size: 21px;
+  font-size: 28px;
   font-weight: 600;
   letter-spacing: 0.02em;
   color: var(--text);
@@ -72,11 +72,11 @@ a {
 
 .nav-links {
   display: flex;
-  gap: 30px;
+  gap: 38px;
 }
 
 .nav-links a {
-  font-size: 11px;
+  font-size: 13px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--muted);
@@ -266,14 +266,15 @@ main {
 @media (max-width: 720px) {
 
   .nav-container {
-    height: 64px;
+    height: 68px;
   }
 
   .nav-links {
-    gap: 18px;
+    gap: 16px;
   }
 
   .nav-links a {
+    font-size: 11px;
     letter-spacing: 0.06em;
   }
 
