@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" href="favicon-32.png" sizes="32x32">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+  <title>Nano-fabrication — Adhiraj Kapuria</title>
+
+  <meta
+    name="description"
+    content="Nano-fabrication of van der Waals heterostructures — hBN-encapsulated, graphite-gated graphene devices built by exfoliation and dry transfer, with AFM and Raman characterization."
+  >
+  <meta name="author" content="Adhiraj Kapuria">
+  <link rel="canonical" href="https://adhirajkapuria.com/fabrication.html">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500;600&family=Inter:wght@400;500&family=Source+Serif+4:wght@600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+  <header class="site-header">
+    <nav class="nav-container">
+
+      <a href="index.html" class="brand">AK</a>
+
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <div class="nav-dropdown">
+          <a href="research.html" class="is-current">Research</a>
+          <div class="dropdown-menu">
+            <div class="dropdown-menu-inner">
+              <a href="theory.html">Theory</a>
+              <a href="fabrication.html" class="is-current">Nano-fabrication</a>
+              <a href="computation.html">Computation</a>
+            </div>
+          </div>
+        </div>
+        <a href="projects.html">Projects</a>
+        <a href="Adhiraj_CV.pdf">CV</a>
+      </div>
+
+    </nav>
+  </header>
+
+  <main>
+
+    <article class="page">
+
+      <p class="eyebrow"><a href="research.html" class="crumb">Research</a> / Nano-fabrication</p>
+      <h1 class="page-title">Van der Waals heterostructures</h1>
+
+      <div class="prose">
+        <p>
+          I fabricate van der Waals heterostructures: devices built by stacking
+          individual atomically thin crystals into a designed sequence. Because
+          each layer is held to the next only by van der Waals forces,
+          materials that cannot be grown together can be assembled by hand,
+          which makes these stacks a flexible platform for engineering
+          electronic structure and testing the physics of two-dimensional
+          systems.
+        </p>
+
+        <h2 class="prose-h">Devices I have built</h2>
+        <p>
+          The stacks I have fabricated are hBN-encapsulated graphene
+          heterostructures. Hexagonal boron nitride above and below the
+          graphene provides an atomically flat, electrically clean environment
+          that preserves the intrinsic behavior of the material inside. My
+          first device uses the silicon substrate as a global back gate; the
+          second adds a local graphite back gate, which together with a top
+          gate allows the carrier density and the perpendicular displacement
+          field to be tuned independently. This encapsulated, gated
+          architecture is the standard high-quality platform for probing
+          correlated and topological states in graphene-based systems.
+        </p>
+
+        <figure class="fab-figure">
+          <img src="figures/graphene_only.jpg" alt="Cross-section of an hBN-encapsulated monolayer graphene stack with a global silicon back gate." loading="lazy">
+          <figcaption>hBN-encapsulated monolayer graphene with a global Si back gate.</figcaption>
+        </figure>
+
+        <figure class="fab-figure">
+          <img src="figures/with_graphite.jpg" alt="Cross-section of an hBN-encapsulated graphene stack with an added local graphite back gate." loading="lazy">
+          <figcaption>hBN-encapsulated graphene with an added local graphite back gate, for independent control of carrier density and displacement field.</figcaption>
+        </figure>
+
+        <h2 class="prose-h">Process</h2>
+        <p>
+          Assembly begins with mechanical exfoliation, thinning bulk crystals
+          to monolayers and few-layer flakes that I identify and sort by
+          optical contrast. I then build the stack by dry transfer, using a
+          PC/PDMS stamp to pick up and release each flake in sequence with
+          deterministic alignment, controlling layer order and orientation. I
+          characterize the stacks with atomic force microscopy and Raman
+          spectroscopy to confirm layer number, map topography, and check
+          interfaces for the bubbles, wrinkles, and residues that degrade
+          device quality. Much of the practical work is in improving the
+          process itself, from exfoliation and stamp preparation to polymer
+          release, annealing, and bubble management, to raise yield and
+          interface quality and make results reproducible. Raman is also
+          central to identifying stacking order: our group uses it to
+          distinguish rhombohedral (ABC) from Bernal (ABA) stacking in
+          multilayer graphene, which is otherwise difficult to determine.
+        </p>
+
+        <h2 class="prose-h">Future directions</h2>
+        <p>
+          The natural extensions of this work add functionality to the same
+          encapsulated, gated platform. One direction incorporates a WSe₂ layer
+          against graphene to induce spin–orbit coupling by proximity; another
+          targets rhombohedral multilayer graphene, whose flat bands host the
+          correlated and Chern-insulating states described in the
+          <a href="theory.html" class="inline-link">theory section</a>. My
+          current WSe₂ work is at the material-qualification stage — exfoliating
+          and characterizing WSe₂ flakes by Raman and AFM — the step that
+          precedes building these heterostructures.
+        </p>
+
+        <figure class="fab-figure">
+          <span class="fig-tag">Planned</span>
+          <img src="figures/WSe2.jpg" alt="Cross-section of a planned graphene/WSe2 heterostructure with a graphite back gate." loading="lazy">
+          <figcaption>Planned: a graphene/WSe₂ heterostructure for proximity-induced spin–orbit coupling.</figcaption>
+        </figure>
+
+        <figure class="fab-figure">
+          <span class="fig-tag">Planned</span>
+          <img src="figures/RG.jpg" alt="Cross-section of a planned rhombohedral multilayer graphene stack with a graphite back gate." loading="lazy">
+          <figcaption>Planned: rhombohedral multilayer graphene for correlated and topological flat-band states.</figcaption>
+        </figure>
+      </div>
+
+    </article>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2026 Adhiraj Kapuria</p>
+    <div class="footer-links">
+      <a
+        href="https://www.linkedin.com/in/adhirajkapuria/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >LinkedIn</a>
+      <a href="mailto:adhiraj.kapuria@duke.edu">adhiraj.kapuria@duke.edu</a>
+    </div>
+  </footer>
+
+</body>
+
+</html>
