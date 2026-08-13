@@ -461,9 +461,10 @@ main {
   margin-top: 28px;
 }
 
-/* Light-background figure variant, for diagrams exported on white (e.g. circuits) */
+/* Transparent figure variant, for diagrams exported on transparent bg (e.g. circuits) */
 .fab-figure.figure-light {
-  background: #fff;
+  background: transparent;
+  border-color: var(--border);
 }
 
 .fab-figure.figure-light img {
