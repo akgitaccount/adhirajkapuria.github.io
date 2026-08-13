@@ -472,6 +472,16 @@ main {
   box-sizing: border-box;
 }
 
+/* White-card variant, for plots exported on a white background (e.g. lab spectra) */
+.fab-figure.figure-white {
+  background: #fff;
+}
+
+.fab-figure.figure-white img {
+  padding: 16px 18px;
+  box-sizing: border-box;
+}
+
 .fig-tag {
   position: absolute;
   top: 12px;

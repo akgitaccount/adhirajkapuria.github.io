@@ -9,11 +9,11 @@
   <link rel="icon" type="image/png" href="favicon-32.png" sizes="32x32">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
-  <title>GaN Characterization — Adhiraj Kapuria</title>
+  <title>Gallium Nitride — Adhiraj Kapuria</title>
 
   <meta
     name="description"
-    content="Structural and optical characterization of gallium nitride, undergraduate research at IIT Delhi."
+    content="Structural and optical characterization of magnesium-doped p-type gallium nitride — XRD, Raman spectroscopy, and UV-visible spectroscopy — from a research internship at IIT Delhi."
   >
   <meta name="author" content="Adhiraj Kapuria">
   <link rel="canonical" href="https://adhirajkapuria.com/gan.html">
@@ -27,7 +27,6 @@
 
   <link rel="stylesheet" href="./style.css">
 
-  <!-- MathJax for equation rendering -->
   <script>
     window.MathJax = {
       tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] },
@@ -77,15 +76,110 @@
 
     <article class="page">
 
-      <p class="eyebrow"><a href="undergraduate.html" class="crumb">Undergraduate Research</a> / GaN Characterization</p>
-      <h1 class="page-title">Gallium nitride characterization</h1>
+      <p class="eyebrow"><a href="undergraduate.html" class="crumb">Undergraduate Research</a> / Gallium Nitride</p>
+      <h1 class="page-title">Characterization of Mg-doped p-type gallium nitride</h1>
 
       <div class="prose">
         <p>
-          Structural and optical characterization of gallium nitride, from a
-          summer at IIT Delhi. A full write-up of this work is in preparation.
+          Structural and optical characterization of magnesium-doped p-type
+          gallium nitride, carried out during a summer research internship at
+          IIT Delhi under Professor Rajendra Singh. Gallium nitride is a
+          wide-bandgap III-V semiconductor central to high-power,
+          high-frequency, and optoelectronic devices. Its p-type form is harder
+          to realize than n-type &mdash; magnesium acceptors have a high activation
+          energy and the material is intrinsically inclined toward n-type &mdash; yet
+          p-type GaN is essential for the p-n junctions underlying LEDs, laser
+          diodes, and transistors. This work characterized an MOCVD-grown p-type
+          GaN film on sapphire using three complementary techniques: X-ray
+          diffraction for structure, Raman spectroscopy for lattice vibrations,
+          and UV-visible spectroscopy for the optical bandgap.
         </p>
+
+        <h2 class="prose-h">Crystal structure &mdash; X-ray diffraction</h2>
+        <p>
+          X-ray diffraction was used to determine the crystallographic structure
+          and quality of the film. The spectrum shows the set of reflections
+          expected for hexagonal wurtzite GaN &mdash; the (100), (002), (101), (110),
+          and (112) planes &mdash; together with a substrate peak from sapphire. The
+          dominant (002) reflection indicates strong preferred orientation along
+          the c-axis, and the sharp, well-defined peaks point to high
+          crystallinity with few defects, consistent with high-quality epitaxial
+          growth on sapphire.
+        </p>
+
+        <figure class="fab-figure figure-white">
+          <img src="XRD.png" alt="X-ray diffraction spectrum of p-type GaN on sapphire, showing the (100), (002), (101), (110), and (112) wurtzite reflections and a sapphire substrate peak." loading="lazy">
+          <figcaption>
+            X-ray diffraction spectrum of p-type GaN on a sapphire substrate.
+            The dominant (002) reflection indicates c-axis preferred orientation.
+          </figcaption>
+        </figure>
+
+        <h2 class="prose-h">Lattice vibrations &mdash; Raman spectroscopy</h2>
+        <p>
+          Raman spectroscopy probed the vibrational modes of the doped film. The
+          spectrum is dominated by the E<sub>2</sub>(high) mode near 569
+          cm<sup>&minus;1</sup>, characteristic of the wurtzite phonon structure
+          and a marker of good crystalline quality, alongside the
+          A<sub>1</sub>(LO) mode near 734 cm<sup>&minus;1</sup>, which reflects
+          the coupling between longitudinal-optical phonons and free carriers.
+          The clean two-mode spectrum is consistent with well-ordered wurtzite
+          GaN.
+        </p>
+
+        <figure class="fab-figure figure-white">
+          <img src="Raman.png" alt="Raman spectrum of p-type GaN showing the E2(high) mode near 569 inverse centimeters and the A1(LO) mode near 734 inverse centimeters." loading="lazy">
+          <figcaption>
+            Raman spectrum of p-type GaN, showing the E<sub>2</sub>(high) and
+            A<sub>1</sub>(LO) phonon modes of wurtzite GaN.
+          </figcaption>
+        </figure>
+
+        <h2 class="prose-h">Optical bandgap &mdash; UV-visible spectroscopy</h2>
+        <p>
+          UV-visible spectroscopy characterized the film's optical response. The
+          absorption spectrum shows a sharp edge near 365 nm with strong
+          absorption in the ultraviolet and low, flat absorption across the
+          visible &mdash; the signature of a wide direct bandgap and low sub-bandgap
+          defect absorption.
+        </p>
+
+        <figure class="fab-figure figure-white">
+          <img src="UV.png" alt="UV-visible absorption spectrum of p-type GaN showing a sharp absorption edge near 365 nm." loading="lazy">
+          <figcaption>
+            UV-visible absorption spectrum of p-type GaN, with a sharp
+            absorption edge near 365 nm.
+          </figcaption>
+        </figure>
+
+        <p>
+          The bandgap was extracted from a Tauc plot, plotting
+          $(\alpha h\nu)^2$ against photon energy and extrapolating the linear
+          region to the energy axis, the standard construction for a direct-gap
+          semiconductor. This gives a bandgap of approximately 3.38 eV,
+          consistent with the accepted value for GaN near 3.4 eV and confirming
+          that the material retains its wide-bandgap character under magnesium
+          doping.
+        </p>
+
+        <figure class="fab-figure figure-white">
+          <img src="Tauc.png" alt="Tauc plot of (alpha h nu) squared versus photon energy for p-type GaN, with a linear fit extrapolating to a bandgap of about 3.38 eV." loading="lazy">
+          <figcaption>
+            Tauc plot for p-type GaN. Extrapolating the linear region gives a
+            bandgap of approximately 3.38 eV.
+          </figcaption>
+        </figure>
+
+        <p class="collab-note">Research internship at IIT Delhi, under Prof. Rajendra Singh, with Dr. Kanika Arora.</p>
       </div>
+
+      <section class="references">
+        <h2 class="ref-heading">References</h2>
+        <ol class="ref-list">
+          <li>X. Cheng, Y. Lin, Y. Zhang, and J. Li, &ldquo;Review of GaN power devices,&rdquo; <em>J. Appl. Phys.</em> <strong>130</strong>, 160901 (2021).</li>
+          <li>S. Musumeci and V. Barba, &ldquo;Gallium nitride power devices in power electronics applications: state of the art and perspectives,&rdquo; <em>Energies</em> <strong>16</strong>, 3894 (2023).</li>
+        </ol>
+      </section>
 
     </article>
 
