@@ -454,6 +454,23 @@ main {
   background: var(--surface);
 }
 
+.collab-note {
+  font-size: 14px;
+  color: var(--muted);
+  font-style: italic;
+  margin-top: 28px;
+}
+
+/* Light-background figure variant, for diagrams exported on white (e.g. circuits) */
+.fab-figure.figure-light {
+  background: #fff;
+}
+
+.fab-figure.figure-light img {
+  padding: 18px 20px;
+  box-sizing: border-box;
+}
+
 .fig-tag {
   position: absolute;
   top: 12px;

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" href="favicon-32.png" sizes="32x32">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+  <title>Quantum Error Detection — Adhiraj Kapuria</title>
+
+  <meta
+    name="description"
+    content="Quantum error detection for Grover's search — encoding a two-qubit Grover search in the [[4,2,2]] code and post-selecting on trivial syndromes to improve success probability under noise."
+  >
+  <meta name="author" content="Adhiraj Kapuria">
+  <link rel="canonical" href="https://adhirajkapuria.com/grover.html">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500;600&family=Inter:wght@400;500&family=Source+Serif+4:wght@600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="./style.css">
+
+  <!-- MathJax for equation rendering -->
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] },
+      svg: { fontCache: 'global' }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script" async></script>
+</head>
+
+<body>
+
+  <header class="site-header">
+    <nav class="nav-container">
+
+      <a href="index.html" class="brand">AK</a>
+
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <div class="nav-dropdown">
+          <a href="research.html">Graduate Research</a>
+          <div class="dropdown-menu">
+            <div class="dropdown-menu-inner">
+              <a href="theory.html">Theory</a>
+              <a href="fabrication.html">Nano-fabrication</a>
+              <a href="computation.html">Computation</a>
+            </div>
+          </div>
+        </div>
+        <div class="nav-dropdown">
+          <a href="undergraduate.html" class="is-current">Undergraduate Research</a>
+          <div class="dropdown-menu">
+            <div class="dropdown-menu-inner">
+              <a href="grover.html" class="is-current">Quantum Error Detection</a>
+              <a href="gan.html">Gallium Nitride</a>
+              <a href="advanced.html">Advanced Experimental Physics Projects</a>
+            </div>
+          </div>
+        </div>
+        <a href="Adhiraj_CV.pdf">CV</a>
+      </div>
+
+    </nav>
+  </header>
+
+  <main>
+
+    <article class="page">
+
+      <p class="eyebrow"><a href="undergraduate.html" class="crumb">Undergraduate Research</a> / Quantum Error Detection</p>
+      <h1 class="page-title">Lightweight quantum error detection for Grover's search</h1>
+
+      <div class="prose">
+        <p>
+          A reproduction and analysis of quantum error detection for Grover's
+          search, building on Pokharel and Lidar (2024). The work encodes a
+          two-qubit Grover search in the [[4,2,2]] error-detecting code and
+          post-selects on trivial syndromes to improve success probability
+          under noise. Dynamical decoupling and measurement-error mitigation,
+          used in the original, were excluded so as to isolate the effect of
+          error detection alone.
+        </p>
+
+        <h2 class="prose-h">The code</h2>
+        <p>
+          The [[4,2,2]] code is the smallest stabilizer code that detects any
+          single-qubit error. It encodes two logical qubits into four physical
+          qubits, with stabilizers
+        </p>
+        <p class="equation">
+          $$S_1 = XXXX, \qquad S_2 = ZZZZ.$$
+        </p>
+        <p>
+          The logical operators are $\overline{X}_1 = XIXI$,
+          $\overline{X}_2 = XXII$, $\overline{Z}_1 = ZZII$, and
+          $\overline{Z}_2 = ZIZI$. The encoding unitary prepares the logical
+          zero as a GHZ state,
+        </p>
+        <p class="equation">
+          $$U_\text{enc}\lvert 0000\rangle = \tfrac{1}{\sqrt{2}}\left(\lvert 0000\rangle + \lvert 1111\rangle\right) = \lvert\overline{00}\rangle,$$
+        </p>
+        <p>
+          and the four logical basis states — the states the encoded Grover
+          circuit searches over — are
+        </p>
+        <p class="equation">
+          $$\lvert\overline{00}\rangle = \tfrac{\lvert 0000\rangle + \lvert 1111\rangle}{\sqrt2},\quad
+            \lvert\overline{01}\rangle = \tfrac{\lvert 0011\rangle + \lvert 1100\rangle}{\sqrt2},\quad
+            \lvert\overline{10}\rangle = \tfrac{\lvert 0101\rangle + \lvert 1010\rangle}{\sqrt2},\quad
+            \lvert\overline{11}\rangle = \tfrac{\lvert 0110\rangle + \lvert 1001\rangle}{\sqrt2}.$$
+        </p>
+
+        <h2 class="prose-h">Encoded circuit and post-selection</h2>
+        <p>
+          The encoded circuit prepares the logical zero, applies the logical
+          Grover operations for a given marked state, then decodes before
+          measurement. The decoder maps the four measured bits to two syndrome
+          bits and two logical bits,
+        </p>
+        <p class="equation">
+          $$s_1 = b_1, \quad s_2 = b_2 \oplus b_4, \qquad z_1 = b_2, \quad z_2 = b_2 \oplus b_3.$$
+        </p>
+        <p>
+          Runs with $(s_1, s_2) \neq (0,0)$ indicate a detected error and are
+          discarded; the remaining runs give the logical outcome
+          $(z_1, z_2)$. Because single-qubit faults dominate on this hardware
+          and the code detects exactly those, post-selection removes most of
+          the error. The encoded circuit's accuracy stays nearly flat as noise
+          increases, while the unencoded circuit degrades steadily.
+        </p>
+
+        <figure class="fab-figure figure-light">
+          <img src="grover_circuit.png" alt="The [[4,2,2]]-encoded one-iteration Grover circuit for marked state 01, showing encoding, logical oracle and diffusion, decoding, and measurement across four qubits." loading="lazy">
+          <figcaption>
+            The [[4,2,2]]-encoded one-iteration Grover circuit for a
+            representative marked state, reproducing the construction of
+            Pokharel and Lidar (2024). Two logical qubits are encoded into four
+            physical qubits; the circuit applies the logical Grover operations,
+            then decodes and post-selects on the two stabilizer checks.
+          </figcaption>
+        </figure>
+
+        <h2 class="prose-h">Noise models and error tomography</h2>
+        <p>
+          Circuits were run under three noise models: a layout-free model with
+          identical qubits, a model coupling the two-qubit error rate to the
+          single-qubit rate, and a calibrated model of a seven-qubit device
+          with its physical connectivity. Comparing them separates the benefit
+          of error detection from the effect of qubit layout. Algorithmic error
+          tomography and a chi-squared test on the correct-versus-failed counts
+          show that the device's connectivity concentrates errors on the most
+          heavily connected qubits, an effect the layout-free model does not
+          capture.
+        </p>
+
+        <p class="collab-note">Joint work with Vedant Agarwal and Bradley Arias, UC Berkeley.</p>
+      </div>
+
+      <section class="references">
+        <h2 class="ref-heading">References</h2>
+        <ol class="ref-list">
+          <li>B. Pokharel and D. A. Lidar, “Better-than-classical Grover search via quantum error detection and suppression,” <em>npj Quantum Inf.</em> <strong>10</strong>, 23 (2024).</li>
+          <li>L. Vaidman, L. Goldenberg, and S. Wiesner, “Error prevention scheme with four particles,” <em>Phys. Rev. A</em> <strong>54</strong>, R1745 (1996).</li>
+          <li>M. A. Nielsen and I. L. Chuang, <em>Quantum Computation and Quantum Information</em> (Cambridge University Press, 2010).</li>
+        </ol>
+      </section>
+
+    </article>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2026 Adhiraj Kapuria</p>
+    <div class="footer-links">
+      <a
+        href="https://www.linkedin.com/in/adhirajkapuria/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >LinkedIn</a>
+      <a
+        href="https://scholars.duke.edu/person/adhirajkapuria"
+        target="_blank"
+        rel="noopener noreferrer"
+      >Duke Scholars Profile</a>
+      <a href="mailto:adhiraj.kapuria@duke.edu">adhiraj.kapuria@duke.edu</a>
+    </div>
+  </footer>
+
+</body>
+
+</html>
